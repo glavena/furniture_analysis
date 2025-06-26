@@ -106,7 +106,7 @@ Aspiring Business Intelligence & Data Analytics professional, passionate about t
 ---
 
 ##  View Dashboard / Live Demo
-[dashboard_3.png]
+! [dashboard_3](./dashboard_3.png)
 
 ---
 
