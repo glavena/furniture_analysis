@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furniture Sales Analytics - Data Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            padding: 40px 0;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .dashboard-container {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+            animation: slideUp 0.8s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .dashboard-image {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .content-section:hover {
+            transform: translateY(-5px);
+        }
+
+        .section-title {
+            color: #333;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            border-left: 5px solid #667eea;
+            padding-left: 20px;
+        }
+
+        .executive-summary {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+
+        .executive-summary .section-title {
+            color: white;
+            border-left-color: white;
+        }
+
+        .key-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .metric-card {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .metric-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .insight-card {
+            background: #f8f9ff;
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 4px solid #667eea;
+        }
+
+        .insight-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .conclusions {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+        }
+
+        .conclusions .section-title {
+            color: white;
+            border-left-color: white;
+        }
+
+        .recommendation-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .recommendation-list li {
+            background: rgba(255,255,255,0.1);
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .recommendation-list li:before {
+            content: "✓";
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            padding: 40px 0;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+            
+            .content-section {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Furniture Sales Analytics</h1>
+            <p>Comprehensive Business Intelligence Dashboard Analysis</p>
+            <p>Credit to <a href="https://www.youtube.com/watch?v=NkQQAgrErIE&t=4295s&ab_channel=FreedomAnalytics"
+                    target="_blank">Freedom Oboh</a></p>
+        </div>
+
+        <div class="dashboard-container">
+            <div style="background: #2a2a2a; padding: 20px; border-radius: 15px; text-align: center;">
+                <p style="color: white; font-style: italic;">📊 Interactive  Furniture Dashboard Visualization</p>
+              <img src="dashboard_3.png" alt="Furniture Sales Dashboard"
+                    style="width: 100%; max-width: 1200px; margin-top: 10px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+            </div>
+        </div>
+        <div class="content-section" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+            <h2 class="section-title" style="color: white; border-left-color: white;">🔧 Technical Methodology & Tools</h2>
+        
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin: 30px 0;">
+                <div
+                    style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 15px; backdrop-filter: blur(10px);">
+                    <h3 style="margin-bottom: 15px; font-size: 1.2rem;">📊 Data Visualization</h3>
+                    <ul style="margin-left: 20px; line-height: 1.8;">
+                        <li><strong>Excel:</strong> Using Power-Query to clean and organize data.</li>
+                        <li><strong>Interactive Dashboard:</strong> KPI cards, trend analysis, geographic mapping</li>
+                        <li><strong>Pivot Tables:</strong> Custom calculations and measures</li>
+                    </ul>
+                </div>
+        
+                <div
+                    style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 15px; backdrop-filter: blur(10px);">
+                    <h3 style="margin-bottom: 15px; font-size: 1.2rem;">🔍 Analytics Process</h3>
+                    <ul style="margin-left: 20px; line-height: 1.8;">
+                        <li><strong>Data Cleaning:</strong> ETL processes and validation</li>
+                        <li><strong>Statistical Analysis:</strong> Performance metrics and trends</li>
+                        <li><strong>Segmentation:</strong> Customer and product analysis</li>
+                    </ul>
+                </div>
+        
+                <div
+                    style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 15px; backdrop-filter: blur(10px);">
+                    <h3 style="margin-bottom: 15px; font-size: 1.2rem;">💡 Business Intelligence</h3>
+                    <ul style="margin-left: 20px; line-height: 1.8;">
+                        <li><strong>Strategic Analysis:</strong> Market segmentation insights</li>
+                        <li><strong>Forecasting:</strong> Seasonal trend prediction</li>
+                        <li><strong>ROI Modeling:</strong> Performance optimization strategies</li>
+                    </ul>
+                </div>
+            </div>
+        
+            <div
+                style="background: rgba(255,255,255,0.15); padding: 20px; border-radius: 10px; margin-top: 25px; border: 2px solid rgba(255,255,255,0.3);">
+                <h3 style="margin-bottom: 15px; font-size: 1.1rem;">🎯 My Analytical Approach</h3>
+                <div
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; margin-bottom: 5px;">📥</div>
+                        <strong>Data Collection</strong><br>
+                        <small>Multi-source integration</small>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; margin-bottom: 5px;">🔧</div>
+                        <strong>Data Processing</strong><br>
+                        <small>Cleaning & validation</small>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; margin-bottom: 5px;">📊</div>
+                        <strong>Analysis & Modeling</strong><br>
+                        <small>Statistical insights</small>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; margin-bottom: 5px;">💼</div>
+                        <strong>Strategic Recommendations</strong><br>
+                        <small>Actionable business insights</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section executive-summary">
+            <h2 class="section-title">Executive Summary</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 30px;">
+                This comprehensive furniture sales analysis reveals strong business performance with strategic opportunities for growth. 
+                The data demonstrates robust revenue generation, efficient shipping operations, and clear market segmentation patterns 
+                that inform targeted business strategies.
+            </p>
+            
+            <div class="key-metrics">
+                <div class="metric-card">
+                    <div class="metric-value">$742.0K</div>
+                    <div class="metric-label">Total Sales</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">$18.5K</div>
+                    <div class="metric-label">Profit</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">58.0K</div>
+                    <div class="metric-label">Units Sold</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">59%</div>
+                    <div class="metric-label">Standard Class Shipping</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Key Business Insights</h2>
+            <div class="insights-grid">
+                <div class="insight-card">
+                    <div class="insight-title">🏆 Market Leadership</div>
+                    <p>Consumer segment dominates with $391.0K in sales, representing the largest revenue driver and indicating strong B2C market positioning.</p>
+                </div>
+                
+                <div class="insight-card">
+                    <div class="insight-title">📈 Seasonal Performance</div>
+                    <p>Peak sales month in December ($121.8K total) suggests strong holiday seasonality, creating opportunities for targeted campaigns.</p>
+                </div>
+                
+                <div class="insight-card">
+                    <div class="insight-title">🚚 Operational Efficiency</div>
+                    <p>4-day shipping duration shows 28% of orders, indicating balanced logistics performance with room for optimization.</p>
+                </div>
+                
+                <div class="insight-card">
+                    <div class="insight-title">🌟 Product Mix Success</div>
+                    <p>Chairs sub-segment leads with $328.4K, demonstrating strong product-market fit in essential furniture categories.</p>
+                </div>
+                
+                <div class="insight-card">
+                    <div class="insight-title">🗺️ Geographic Strength</div>
+                    <p>California leads state sales with $156.1K, while New York City tops urban markets, showing coastal market dominance.</p>
+                </div>
+                
+                <div class="insight-card">
+                    <div class="insight-title">📊 Profit Margin Analysis</div>
+                    <p>2.5% overall profit margin indicates opportunities for cost optimization and pricing strategy refinement.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section conclusions">
+            <h2 class="section-title">Strategic Conclusions & Recommendations</h2>
+            
+            <h3 style="margin: 30px 0 20px 0; font-size: 1.3rem;">Business Performance Analysis</h3>
+            <p style="margin-bottom: 20px;">
+                The furniture business demonstrates solid revenue performance with $742K in total sales, though the 2.5% profit margin 
+                suggests opportunities for margin improvement through strategic pricing optimization and cost management initiatives.
+            </p>
+            
+            <h3 style="margin: 30px 0 20px 0; font-size: 1.3rem;">Actionable Recommendations</h3>
+            <ul class="recommendation-list">
+                <li><strong>Consumer Segment Focus:</strong> Invest additional marketing resources in the consumer segment, which generates 53% of total revenue</li>
+                <li><strong>Holiday Season Optimization:</strong> Develop comprehensive Q4 marketing campaigns to capitalize on December peak performance</li>
+                <li><strong>Supply Chain Enhancement:</strong> Optimize shipping operations to reduce the 28% of orders taking 4+ days</li>
+                <li><strong>Geographic Expansion:</strong> Replicate California and NYC success strategies in other major metropolitan markets</li>
+                <li><strong>Product Portfolio Growth:</strong> Expand chair offerings and explore complementary furniture categories</li>
+                <li><strong>Margin Improvement:</strong> Implement value-based pricing strategies and supplier negotiations to improve profitability</li>
+                <li><strong>Corporate Segment Development:</strong> Develop B2B sales strategies to grow the corporate segment beyond current $229K</li>
+            </ul>
+            
+            <h3 style="margin: 30px 0 20px 0; font-size: 1.3rem;">Strategic Implementation Roadmap</h3>
+            
+            <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 15px; margin: 20px 0;">
+                <h4 style="margin-bottom: 15px; font-size: 1.1rem;">🎯 Immediate Actions (30-60 Days)</h4>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li>Establish automated KPI dashboards with real-time segment performance tracking</li>
+                    <li>Launch A/B testing for pricing optimization in low-margin product categories</li>
+                    <li>Initiate customer satisfaction surveys in underperforming shipping duration segments</li>
+                </ul>
+            </div>
+            
+            <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 15px; margin: 20px 0;">
+                <h4 style="margin-bottom: 15px; font-size: 1.1rem;">📈 Growth Initiatives (60-120 Days)</h4>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li>Deploy predictive analytics models to forecast seasonal demand and optimize inventory</li>
+                    <li>Execute geographic expansion pilot programs in Texas, Florida, and Illinois markets</li>
+                    <li>Implement dynamic pricing strategies based on regional performance and competition analysis</li>
+                    <li>Launch corporate client acquisition campaigns targeting the $100K+ revenue opportunity gap</li>
+                </ul>
+            </div>
+            
+            <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 15px; margin: 20px 0;">
+                <h4 style="margin-bottom: 15px; font-size: 1.1rem;">🚀 Strategic Transformation (3-6 Months)</h4>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li>Develop omnichannel customer experience platform integrating online and showroom data</li>
+                    <li>Establish quarterly business reviews with segment-specific ROI targets and performance scorecards</li>
+                    <li>Create data-driven product development pipeline based on regional preferences and margin analysis</li>
+                    <li>Build competitive intelligence framework to maintain market leadership in high-performing segments</li>
+                </ul>
+            </div>
+            
+            <div
+                style="background: rgba(255,255,255,0.15); padding: 20px; border-radius: 10px; margin-top: 25px; border: 2px solid rgba(255,255,255,0.3);">
+                <h4 style="margin-bottom: 10px; font-size: 1rem;">📊 Success Metrics & Accountability</h4>
+                <p style="font-size: 0.95rem; line-height: 1.6;">
+                    <strong>Target Outcomes:</strong> 15% profit margin improvement, 25% reduction in 4+ day shipping,
+                    40% growth in underperforming regions, and $1M+ annual revenue milestone within 12 months.
+                </p>
+            </div>
+            </div>
+
+
+        <div class="footer">
+            <p>📊 Data-Driven Business Intelligence | Gladys Maigua</p>
+            <p style="margin-top: 10px; font-size: 0.9rem;">Transforming complex data into actionable business insights</p>
+        </div>
+    </div>
+</body>
+</html>
